@@ -23,7 +23,7 @@ Você pode utilizar o software no StackBlitz.com: [].
 
 ## Documentação 
 
-Este projeto utiliza o **Compodoc** para gerar a documentação do código, que é publicada online utilizando o Github Pages: [].
+Este projeto utiliza o **Compodoc** para gerar a documentação do código, que é publicada online utilizando o Github Pages: https://jacksongomesbr.github.io/lpweb20181sg/index.html.
 
 ## Como contribuir com este projeto ou desenvolver novas funcionalidades
 
