@@ -1,0 +1,27 @@
+<h1>Cadastrar partida</h1>
+<p>Utilize o formulário abaixo para informar os dados da partida.</p>
+<form #cadastro="ngForm" (submit)="salvar()">
+  <div class="form-group">
+    <label for="data">Data</label>
+    <input type="date" name="data" id="data" class="form-control" required [(ngModel)]="data">
+  </div>
+  <div class="form-group">
+    <label for="horario">Horário</label>
+    <input type="time" name="horario" id="horario" class="form-control" required  [(ngModel)]="horario">
+  </div>
+  <div class="form-group">
+    <label for="mandante">Mandante</label>
+    <select name="mandante" id="mandante" class="form-control" required  [(ngModel)]="mandante">
+      <option value="" selected="selected">Selecione uma opção</option>
+      <option *ngFor="let time of times" [value]="time.id">{{time.nome}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="visitante">Visitante</label>
+    <select name="visitante" id="visitante" class="form-control" required  [(ngModel)]="visitante">
+      <option value="" selected="selected">Selecione uma opção</option>
+      <option *ngFor="let time of times" [value]="time.id">{{time.nome}}</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" [disabled]="!cadastro.valid"><i class="fa fa-save"></i> Salvar</button>
+</form>

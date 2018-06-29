@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.main-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: .8em;
+  background-color: #fcfcfc;
+  padding: 20px;
+}

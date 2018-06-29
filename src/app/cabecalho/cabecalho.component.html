@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">LancesWeb</a>
+    <button class="navbar-toggler" ngbNavbarToggler type="button" (click)="isCollapsed = !isCollapsed"
+            data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/">Início</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/partidas">Partidas</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/sobre">Sobre</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,44 @@
+<div *ngIf="partida">
+  <div class="float-right">
+    <a class="btn btn-primary" [routerLink]="['/partidas', partida.id]">Detalhes</a>
+  </div>
+  <h1>
+    <img [src]="partida.mandante.escudo" height="64">
+    {{partida.mandante.nome}}
+    vs.
+    <img [src]="partida.visitante.escudo" height="64">
+    {{partida.visitante.nome}}</h1>
+  <div class="text-muted"><i class="fa fa-clock-o"></i> {{partida.data}} às {{partida.horario}}</div>
+  <hr>
+  <p>Qual seu palpite de gols?</p>
+  <div class="alert alert-success" *ngIf="resultado === true">
+    <strong>Parabéns!</strong> Palpite correto.
+  </div>
+  <div class="alert alert-danger" *ngIf="resultado === false">
+    <strong>Ooops!</strong> Não foi dessa vez. Palpite incorreto.
+  </div>
+  <div class="alert alert-danger" *ngIf="erroNumGols">
+    <strong>Ooops!</strong> O número de gols precisa ser superior a zero.
+  </div>
+  <form #palpite="ngForm" (submit)="verificar()">
+    <div class="form-group">
+      <label for="usuario">Usuário</label>
+      <input type="text" name="usuario" id="usuario" [(ngModel)]="usuario" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="jogador">Jogador</label>
+      <select name="jogador" id="jogador" [(ngModel)]="jogador" class="form-control" required>
+        <option value="" selected="selected">Selecione um jogador</option>
+        <option *ngFor="let jogador of jogadores" [value]="jogador.id">{{jogador.nome}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="gols">Quantidade de gols</label>
+      <input type="number" name="gols" id="gols" [(ngModel)]="gols" class="form-control" min="1" required>
+    </div>
+    <div>
+      <button class="btn btn-primary" [disabled]="!palpite.valid">Verificar</button> &nbsp;
+      <button class="btn btn-warning" type="button" (click)="limpar()" [disabled]="!palpite.valid">Limpar</button>
+    </div>
+  </form>
+</div>

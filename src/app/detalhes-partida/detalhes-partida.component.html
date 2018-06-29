@@ -1,0 +1,18 @@
+<div *ngIf="partida">
+  <h1>
+    <img [src]="partida.mandante.escudo" height="64">
+    {{partida.mandante.nome}}
+    vs.
+    <img [src]="partida.visitante.escudo" height="64">
+    {{partida.visitante.nome}}</h1>
+  <div class="text-muted"><i class="fa fa-clock-o"></i> {{partida.data}} às {{partida.horario}}</div>
+  <hr>
+  <div>
+    <i class="fa fa-plus-square"></i>&nbsp;  <strong>Novo palpite:</strong> &nbsp;
+    <a [routerLink]="['/partidas', partida.id, 'palpite', 'placar']">Palpite de placar</a> ou
+    <a [routerLink]="['/partidas', partida.id, 'palpite', 'gols']">Palpite quantidade de gols de um jogador</a>
+  </div>
+  <div>
+    <a [routerLink]="['/partidas', partida.id, 'palpite', 'estatisticas']"><i class="fa fa-calculator"></i>&nbsp; <strong>Estatísticas</strong></a>
+  </div>
+</div>
